@@ -1,31 +1,43 @@
 using System;
+using System.Runtime.InteropServices.Marshalling;
 
 class Program
 {
     static void Main(string[] args)
-    {
-        Random randomGenerator = new Random();
-        int magicNumber = randomGenerator.Next(1, 101);
+    {   
+        string play = "yes";
 
-        int guess = -1;
-
-        while (guess != magicNumber)
+        while (play == "yes")
         {
-            Console.WriteLine("What is your guess? ");
-            guess = int.Parse(Console.ReadLine());
+            Random randomGenerator = new Random();
+            int magicNumber = randomGenerator.Next(1, 101);
 
-            if (guess > magicNumber)
+            int guess = -1;
+            int guesses = 0;
+
+            while (guess != magicNumber)
             {
-                Console.WriteLine("Lower");
+                Console.Write("What is your guess? ");
+                guess = int.Parse(Console.ReadLine());
+
+                guesses++;
+
+                if (guess > magicNumber)
+                {
+                    Console.WriteLine("Lower");
+                }
+                else if (guess < magicNumber)
+                {
+                    Console.WriteLine("Higher");
+                }
+                else
+                {
+                    Console.WriteLine($"Well done! You guessed it in {guesses} tries!");
+                }
             }
-            else if (guess < magicNumber)
-            {
-                Console.WriteLine("Higher");
-            }
-            else
-            {
-                Console.WriteLine("You guessed it!");
-            }
+            
+            Console.Write("Would you like to play again? yes/no? ");
+            play = Console.ReadLine();
         }
     }
 }
