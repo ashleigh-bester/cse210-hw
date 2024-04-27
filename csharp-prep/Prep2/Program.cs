@@ -35,8 +35,23 @@ class Program
         {
             letter = "F";
         }
-        
-        Console.WriteLine($"Your Grade: {letter}");
+
+        if (percentage >= 97 || percentage < 60)
+        {
+            Console.WriteLine($"Your Grade: {letter}");
+        }
+        else if (percentage % 10 >= 7)
+        {
+            Console.WriteLine($"Your Grade: {letter}+");
+        }
+        else if (percentage % 10 < 3)
+        {
+            Console.WriteLine($"Your Grade: {letter}-");
+        }
+        else
+        {
+            Console.WriteLine($"Your Grade: {letter}");
+        }
 
         if (percentage >= 70)
         {
