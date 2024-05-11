@@ -6,6 +6,7 @@ class Program
     static void Main(string[] args)
     {
         Console.WriteLine("Hello Develop03 World!");
+        Console.WriteLine("");
         
         Reference reference = new Reference("Alma", 32, 21, 22);
         Console.WriteLine(reference.GetDisplayText());
