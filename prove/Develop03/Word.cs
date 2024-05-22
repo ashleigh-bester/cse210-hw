@@ -3,11 +3,11 @@ using System;
 public class Word
 {
     private string _text;
-    private bool _isHidden;
+    private bool _isHidden = false;
 
     public Word(string text)
     {
-
+        _text = text;
     }
 
     public void Hide()
@@ -27,6 +27,6 @@ public class Word
 
     public string GetDisplayText()
     {
-        return "";
+        return _text;
     }
 }

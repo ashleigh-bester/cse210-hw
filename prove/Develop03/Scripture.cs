@@ -1,5 +1,6 @@
 using System;
 using System.Data;
+using System.IO;
 
 public class Scripture
 {
@@ -9,7 +10,7 @@ public class Scripture
     public Scripture(Reference Reference, string text)
     {
         _reference = Reference;
-        text = "21 And now as I said concerning faith—faith is not to have a perfect knowledge of things; therefore if ye have faith ye hope for things which are not seen, which are true.";
+        text = "";
     }
 
     public void HideRandomWords(int numberToHide)
@@ -19,7 +20,7 @@ public class Scripture
 
     public string GetDisplayText()
     {
-        return "";
+        return $"{_reference} + {_words}";
     }
 
     public bool IsCompletelyHidden()
