@@ -5,20 +5,22 @@ public class Customer
     private string _customerName;
     private Address _customerAddress;
 
-    public Customer(string customerName)
+    public Customer(string customerName, Address customerAddress)
     {
         _customerName = customerName;
+        _customerAddress = customerAddress;
     }
 
     public string GetCustomerName()
     {
-        return _customerName;
+        return $"Recipient: {_customerName}";
     }
 
-    public void GetCustomerAddress()
+    /*public string GetCustomerAddress()
     {
-        _customerAddress.FullAddress();
-    }
+        
+        return _customerAddress.FullAddress();
+    }*/
 
     public bool VarifyCountry()
     {

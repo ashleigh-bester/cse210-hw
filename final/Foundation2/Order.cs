@@ -6,20 +6,27 @@ public class Order
     private List<Product> _products = new List<Product>();
     private Customer _customer;
     
-    public void GetCustomer()
+    public Order(Customer customer)
     {
-        _customer.GetCustomerName();
-        _customer.GetCustomerAddress();
+        _customer = customer;
     }
-    public void GetPackingLabel()
+
+    public string GetCustomer()
+    {
+        return _customer.GetCustomerName();
+        //_customer.GetCustomerAddress();
+    }
+
+    public void GetProduct()
     {
         foreach (Product product in _products)
         {
-            product.GetProductNameAndId();
-            _products.Add(product);
+            Console.WriteLine(product);
         }
-
-        GetCustomer();
+    }
+    public string GetPackingLabel()
+    {
+        return "";
     }
 
     public string GetShippingLabel()

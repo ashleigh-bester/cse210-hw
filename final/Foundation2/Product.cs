@@ -5,8 +5,8 @@ public class Product
 {
     private string _productName;
     private int _productId;
-    private double _price;
-    private int _quantity;
+    private double _price = 0;
+    private int _quantity = 0;
 
     public Product(string productName, int productId)
     {
@@ -16,7 +16,7 @@ public class Product
 
     public string GetProductNameAndId()
     {
-        return $"{_productName} | {_productId}";
+        return $"{_productName} | ID ({_productId})";
     }
     public double TotalCostProduct()
     {
