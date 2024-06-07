@@ -21,4 +21,13 @@ public class Order
 
         GetCustomer();
     }
+
+    public string GetShippingLabel()
+    {
+        return "";
+    }
+    public double OrderTotalPrice()
+    {
+        return 00;
+    }
 }
