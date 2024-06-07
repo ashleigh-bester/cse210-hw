@@ -6,28 +6,23 @@ public abstract class Goal
     private string _description;
     private int _points = 0;
 
-    public Goal(string name, string descirption, int points)
+    public Goal(string name, string description, int points)
     {
-
+        _shortName = name;
+        _description = description;
+        _points = points;
     }
 
-    public /*abstract*/ virtual void RecordEvent()
-    {
+    public abstract void RecordEvent();
 
-    }
-
-    public /*abstract*/ virtual bool IsComplete()
-    {
-        return true;
-    }
+    public abstract bool IsComplete();
 
     public virtual string GetDetailsString()
-    {
-        return "";
+    {   
+        string checkbox = "[ ]";
+
+        return $"{checkbox} {_shortName} ({_description})";
     }
 
-    public /*abstract*/ virtual string GetStringRepresentation()
-    {
-        return "";
-    }
+    public abstract string GetStringRepresentation();
 }
